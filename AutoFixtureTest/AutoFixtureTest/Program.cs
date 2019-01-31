@@ -22,7 +22,7 @@ namespace AutoFixtureTest
             });
 
 
-            var erkek = factory.GetInstance();
+            var man = factory.GetInstance();
 
             factory.CreateHuman(new Woman()
             {
@@ -30,11 +30,11 @@ namespace AutoFixtureTest
                 Name = "Helen"
             });
 
-            var bayan = factory.GetInstance();
+            var woman = factory.GetInstance();
 
-            erkek.Speak();
+            man.Speak();
 
-            bayan.Speak();
+            woman.Speak();
 
             Console.ReadLine();
         }
