@@ -19,10 +19,14 @@ namespace AutoFixtureTest.Tests
         public void Init()
         {
            fixture = new Fixture();
+
+            //If I give IHuman interface give the Man Class
            fixture.Register<IHuman>(() => new Man());
+            //create HumanFactory mock class
            mockHumanFactory = fixture.Build<HumanFactory>().Create();
         }
      
+        //Create a mock human with given parameters
         public IHuman GetMockHuman(string name, int age)
         {
             return fixture.Build<Man>().With(p => p.Name, name)
